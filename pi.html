@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Gráfico de Barras com Chart.js</title>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+	<canvas id="barChart" style="position:relative; height:40vh; width:80vw"></canvas>
+	<script>
+		var ctx = document.getElementById('barChart').getContext('2d');
+		var barChart = new Chart(ctx, {
+			type: 'bar',
+			data: {
+				labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+				datasets: [
+					{
+						label: 'Temperatura',
+						data: [22, 24, 27, 23, 20, 18],
+						backgroundColor: 'rgba(255, 99, 132, 0.5)',
+						borderColor: 'rgba(255, 99, 132, 1)',
+						borderWidth: 1
+					},
+
+
+                    
+					{
+						label: 'Umidade',
+						data: [80, 85, 90, 92,95,100],
+						backgroundColor: 'rgba(54, 162, 235, 0.5)',
+						borderColor: 'rgba(54, 162, 235, 1)',
+						borderWidth: 1
+					}
+				]
+			},
+			options: {
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero: true
+						}
+					}]
+				}
+			}
+		});
+	</script>
+</body>
+</html>
